@@ -15,8 +15,8 @@ function showConvexHull() {
         }
     )
     var convexHullPoints = convexHull(points);
-    var newStuff = convexHullPoints.map(function (element) {return ([element.x,element.y])})
-    var convexHullPolygon = L.polygon(newStuff, ).addTo(mymap);
+    var leafletHull = convexHullPoints.map(function (element) {return ([element.x,element.y])})
+    var convexHullPolygon = L.polygon(leafletHull).addTo(mymap);
     
     var bounds = convexHullPolygon.getBounds();
     mymap.fitBounds(bounds);
